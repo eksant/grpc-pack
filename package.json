@@ -1,0 +1,31 @@
+{
+  "name": "grpc-pack",
+  "version": "0.0.1",
+  "description": "Simpler use of grpc in Node.js",
+  "main": "index.js",
+  "author": "eksant <eksant@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "nyc --reporter=text mocha",
+    "test-coverage": "mocha --coverage"
+  },
+  "keywords": [
+    "grpc",
+    "eksa"
+  ],
+  "homepage": "https://github.com/eksant/grpc-pack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eksant/grpc-pack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eksant/grpc-pack/issues"
+  },
+  "devDependencies": {
+    "@grpc/proto-loader": "^0.5.1",
+    "grpc": "^1.21.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  }
+}
