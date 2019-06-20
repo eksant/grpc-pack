@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "eksant <eksant@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "nyc --reporter=text mocha",
     "test-coverage": "mocha --coverage"
