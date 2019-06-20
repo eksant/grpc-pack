@@ -7,8 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "nyc --reporter=text mocha",
-    "test-coverage": "mocha --coverage"
+    "test": "nyc --reporter=text mocha"
   },
   "keywords": [
     "grpc",
@@ -23,9 +22,11 @@
     "url": "https://github.com/eksant/grpc-pack/issues"
   },
   "devDependencies": {
-    "@grpc/proto-loader": "^0.5.1",
-    "grpc": "^1.21.1",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.1",
+    "grpc": "^1.21.1"
   }
 }
