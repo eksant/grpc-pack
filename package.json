@@ -1,6 +1,6 @@
 {
   "name": "grpc-pack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simpler use of grpc in Node.js",
   "main": "index.js",
   "author": "eksant <eksant@gmail.com>",

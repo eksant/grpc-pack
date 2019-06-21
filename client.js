@@ -2,11 +2,15 @@ const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
 
 function createClient(
-  { protoPath, protoName, serviceName },
+  { protoPath, protoName, servicePath, serviceName },
   host,
   creds = grpc.credentials.createInsecure()
 ) {
-  const pkgDef = protoLoader.loadSync(`${protoPath}/${protoName}`, {
+  const path =
+    typeof servicePath !== 'undefined'
+      ? `${protoPath}/${servicePath}/${protoName}`
+      : `${protoPath}/${protoName}`;
+  const pkgDef = protoLoader.loadSync(path, {
     keepCase: true,
     longs: String,
     enums: String,

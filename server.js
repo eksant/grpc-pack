@@ -19,8 +19,12 @@ class GrpcServer {
     this.server = new grpc.Server();
   }
 
-  use({ protoPath, protoName, serviceName, routes }) {
-    const pkgDef = protoLoader.loadSync(`${protoPath}/${protoName}`, {
+  use({ protoPath, protoName, servicePath, serviceName, routes }) {
+    const path =
+      typeof servicePath !== 'undefined'
+        ? `${protoPath}/${servicePath}/${protoName}`
+        : `${protoPath}/${protoName}`;
+    const pkgDef = protoLoader.loadSync(path, {
       keepCase: true,
       longs: String,
       enums: String,
