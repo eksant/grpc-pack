@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package model;
+option go_package = "github.com/zoobc/zoobc-core/common/model";
+
+import "model/transaction.proto";
+
+// Block represent the block data structure stored in the database
+message Block {
+  int64 ID = 1 [ jstype = JS_STRING ];
+  uint32 Height = 2;
+  string CumulativeDifficulty = 3;
+  int64 TotalCoinBase = 4 [ jstype = JS_STRING ];
+  uint32 Version = 5;
+}
+
+// BlockExtendedInfo represent the Block data plus part of block data not to be persisted to database
+message BlockExtendedInfo {
+  Block Block = 1;
+}
+
+// GetBlocksRequest create request to get a list block
+message GetBlocksRequest {
+  // Fetch block from `n` height
+  uint32 Height = 1;
+}
+
+message GetBlocksResponse {
+  // Number of block returned
+  uint32 Count = 1;
+  // Blocks height returned from
+  uint32 Height = 2;
+  // Blocks returned
+  repeated Block Blocks = 3;
+}
