@@ -171,7 +171,7 @@ server.use({
   routes: {
     GetBlocks: (call, callback) => {
       const Height = call.request.Height;
-      const Blocks = Height > 0 ? mockup_2.filter(f => f.Height === Height) : mockup_2;
+      const Blocks = Height > 0 ? mockup.filter(f => f.Height === Height) : mockup;
       const Count = Blocks.length;
       const GetBlocksResponse = {
         Count,
